@@ -1,4 +1,6 @@
 #!/bin/zsh
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (C) 2026 Etuka Onono
 # scala-space [--check] [paths...]
 # Applies the house spacing rule (a space before every argument, parameter and type-parameter list) to the Scala
 # files under the given paths (default: the current directory). With --check, changes nothing and exits non-zero if
