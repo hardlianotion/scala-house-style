@@ -50,11 +50,12 @@ or CI step.
 
 `SKILL.md` makes this a [Claude Code skill](https://docs.claude.com/en/docs/claude-code/skills): agents writing Scala
 learn the rule, write in it, and run `scala-space` on the files they touched before reporting the work done. Install
-it for every project by linking the checkout into your skills folder:
+it for every project with `install.sh`, which copies the skill into your skills folder and `scala-space` into
+`~/.local/bin`, so it runs without the checkout; rerun it after pulling a change:
 
 ```sh
 git clone git@github.com:hardlianotion/scala-house-style.git
-ln -s "$PWD/scala-house-style" ~/.claude/skills/scala-house-style
+scala-house-style/install.sh
 ```
 
 A project's `AGENTS.md` or `CLAUDE.md` can then say: after any edit, run `scala-space` on the files touched; never
