@@ -1,6 +1,6 @@
 ---
 name: scala-house-style
-description: The user's Scala layout rule (a space before every argument, parameter and type-parameter list, as in `def f [T] (x: Int)`, `List [A]`, `Some (x)`) and the tool that applies it. Use whenever writing or editing Scala code in the user's projects, before reporting the edit done or committing, and when asked to check or fix Scala formatting or style.
+description: The user's Scala layout rule (a space before every argument, parameter and type-parameter list, as in `def f [T] (x: Int)`, `List [A]`, `Some (x)`) and the tool that applies it. Use whenever writing or editing Scala code in the user's own projects (Scala 3; not in projects built by others, nor Scala 2.13 or Java code), before reporting the edit done or committing, and when asked to check or fix Scala formatting or style.
 ---
 
 # Scala house style
@@ -23,6 +23,13 @@ That covers definitions, calls, patterns (`case Some (x)`), annotations, `f ()`,
 No general formatter holds this style: Scalafmt has no option for definitions or type brackets, and IntelliJ's
 `format.sh` breaks Scala 3 files without a loaded project. **Do not run Scalafmt or any other formatter** on the user's
 code; it rewrites the rest of the layout too.
+
+## Whose code
+
+The rule is for the user's own projects, which are Scala 3. In a project built by others, its own style wins: never
+run `scala-space` there or write in the house style, and match the code around you. Scala 2.13 and Java code only
+ever come from such projects (the user writes neither otherwise), so code in either is always someone else's: keep
+its language version and its style.
 
 ## Applying it
 
